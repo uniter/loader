@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDirs": ["./src", "./test"],
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
+  }
+}

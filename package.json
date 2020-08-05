@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "name": "uniter-loader",
+  "description": "Uniter-Loader - Webpack loader for requiring PHP files from JavaScript with Uniter",
+  "keywords": [
+    "uniter",
+    "php",
+    "webpack",
+    "loader"
+  ],
+  "homepage": "https://github.com/uniter/loader",
+  "author": "Dan Phillimore <dan@ovms.co> (https://github.com/asmblah)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uniter/loader"
+  },
+  "bugs": {
+    "email": "dan@ovms.co",
+    "url": "https://github.com/uniter/loader/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "MIT-LICENSE.txt",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run lint:check && tsc -p src",
+    "jest": "jest '/test/.*\\.test\\.ts$'",
+    "lint:check": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix",
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint:check && npm run jest"
+  },
+  "dependencies": {
+    "phpify": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "@types/jest-sinon": "^1.0.1",
+    "@types/node": "^14.0.27",
+    "@types/webpack": "^4.41.21",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.2.2",
+    "jest-sinon": "^1.0.4",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.4",
+    "ts-sinon": "^1.2.0",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "license": "MIT"
+}
