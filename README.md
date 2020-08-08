@@ -122,16 +122,14 @@ transpile along with those that were `require()`'d from JS-land, and include in 
 
 ```javascript
 module.exports = {
-  phpify: {
-    phptojs: {
-      include: [
-        "php/**/*.php",
-        "vendor/autoload.php",
-        "vendor/composer/**/*.php",
-        "vendor/symfony/event-dispatcher/**/*.php"
-      ]
+    phpify: {
+        include: [
+            "php/**/*.php",
+            "vendor/autoload.php",
+            "vendor/composer/**/*.php",
+            "vendor/symfony/event-dispatcher/**/*.php"
+        ]
     }
-  }
 };
 ```
 
