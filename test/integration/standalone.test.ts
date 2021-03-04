@@ -36,9 +36,9 @@ describe('Standalone loader integration', () => {
         expect(callback).toHaveBeenCalledOnce();
         expect(callback).toHaveBeenCalledWith(
             null,
-            `require("${basePath}/node_modules/phpify/src/php/initialiser_stub.php");
-module.exports = require("${basePath}/node_modules/phpify/api")` +
-                `.load("../../../../../../../../path/to/my_module.php", ` +
+            `require("${basePath}/node_modules/phpify/src/php/initialiser_stub.php");\n` +
+                `require("${basePath}/node_modules/phpify/api")` +
+                `.load("../../../../../../../../path/to/my_module.php", module, ` +
                 `require('${basePath}/node_modules/phpruntime')` +
                 `.compile(function (stdin, stdout, stderr, tools, namespace) {` +
                 `var namespaceScope = tools.topLevelNamespaceScope, namespaceResult, scope = tools.topLevelScope, currentClass = null;` +
