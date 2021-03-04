@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "uniter-loader",
   "description": "Uniter-Loader - Webpack loader for requiring PHP files from JavaScript with Uniter",
   "keywords": [
