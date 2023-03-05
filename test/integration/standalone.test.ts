@@ -1,10 +1,10 @@
 /*
- * PHPConfig - Loads Uniter's PHP configuration
+ * Uniter-Loader - Webpack loader for requiring PHP files from JavaScript
  * Copyright (c) Dan Phillimore (asmblah)
- * https://github.com/uniter/phpconfig/
+ * https://github.com/uniter/loader/
  *
  * Released under the MIT license
- * https://github.com/uniter/phpconfig/raw/master/MIT-LICENSE.txt
+ * https://github.com/uniter/loader/raw/master/MIT-LICENSE.txt
  */
 
 import loader from '../..';
@@ -40,10 +40,10 @@ describe('Standalone loader integration', () => {
                 `require("${basePath}/node_modules/phpify/api")` +
                 `.load("../../../../../../../../path/to/my_module.php", module, ` +
                 `require('${basePath}/node_modules/phpruntime')` +
-                `.compile(function (stdin, stdout, stderr, tools, namespace) {` +
-                `var namespaceScope = tools.topLevelNamespaceScope, namespaceResult, scope = tools.topLevelScope, currentClass = null;` +
-                `(stdout.write(tools.valueFactory.createInteger(21).coerceToString().getNative()), tools.valueFactory.createInteger(1));` +
-                `return tools.valueFactory.createNull();}));;`
+                `.compile(function (core) {` +
+                `var createInteger = core.createInteger, print = core.print;` +
+                `print(createInteger(21));})` +
+                `);;`
         );
     });
 
