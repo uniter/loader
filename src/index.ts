@@ -24,7 +24,7 @@ export default function (this: LoaderContext, sourcePHP: string): void {
     try {
         result = transformer.transform(sourcePHP, sourceModulePath);
     } catch (error) {
-        this.callback(error);
+        this.callback(error as Error);
         return;
     }
 
