@@ -7,14 +7,13 @@
  * https://github.com/uniter/loader/raw/master/MIT-LICENSE.txt
  */
 
-import * as webpack from 'webpack';
-import LoaderContext = webpack.loader.LoaderContext;
-import transformerFactory = require('phpify');
+import { LoaderContext } from 'webpack';
+import transformerFactory from 'phpify';
 
-export default function (this: LoaderContext, sourcePHP: string): void {
+export default function (this: LoaderContext<object>, sourcePHP: string): void {
     let result;
 
-    // The path to the folder webpack.config.js is in
+    // The path to the folder webpack.config.js is in.
     const rootContext = this.rootContext;
     const sourceModulePath = this.resource;
     const transformer = transformerFactory.create(rootContext);
